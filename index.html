@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="비대면법인프로세스팀의 주요 업무와 영업점 및 본부 협업부서를 위한 FAQ입니다.">
+  <title>비대면법인프로세스팀</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="navigation.js" defer></script>
+  <script src="support-chat.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#intro">본문으로 건너뛰기</a>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#intro">비대면법인프로세스팀</a>
+      <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">메뉴</button>
+      <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+        <a href="#intro">팀 소개</a>
+        <a href="#work">주요 업무</a>
+        <a href="faq.html">자주 묻는 질문</a>
+        <a href="#contact">문의·협업 안내</a>
+      </nav>
+      <label class="role-picker" for="role-view">
+        <span>보기 모드</span>
+        <select id="role-view">
+          <option value="guest">게스트</option>
+          <option value="admin">관리자</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="intro" aria-labelledby="intro-title">
+      <div class="wrap hero-inner">
+        <div>
+          <h1 id="intro-title">비대면법인프로세스팀</h1>
+          <p>법인 고객의 비대면 여수신 절차와 결제성 여신 상품을 기획·운영하고, 영업점 업무를 지원합니다.</p>
+          <a class="primary" href="faq.html">자주 묻는 질문 보기</a>
+        </div>
+        <div class="hero-art">
+          <div class="hero-portal" id="hero-portal">
+            <img class="hero-mascot" src="images/byeoldori-suit.png" width="340" height="591" alt="양복 입은 별돌이">
+            <span class="portal-door" aria-hidden="true"></span>
+            <span class="portal-door" aria-hidden="true"></span>
+          </div>
+          <button class="portal-replay" type="button" id="portal-replay" aria-controls="hero-portal" hidden>별돌이 다시 만나기</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <h2 id="work-title">주요 업무</h2>
+      <div class="work-grid">
+        <article class="work-card">
+          <h3>법인 비대면 여수신 프로세스</h3>
+          <p>법인 고객이 비대면으로 예금·대출 업무를 진행하는 절차를 기획하고 운영합니다.</p>
+          <p class="example"><strong>문의 예시</strong>비대면 신청 과정이나 절차 개선</p>
+        </article>
+        <article class="work-card">
+          <h3>결제성 여신 상품</h3>
+          <p>결제성 여신 상품을 기획하고 운영합니다.</p>
+          <p class="example"><strong>문의 예시</strong>상품 운영 기준이나 협업 범위</p>
+        </article>
+        <article class="work-card">
+          <h3>영업점 문의 응대</h3>
+          <p>비대면 절차와 상품에 관한 영업점 문의를 확인하고 안내합니다.</p>
+          <p class="example"><strong>문의 예시</strong>신청이 멈춘 단계나 안내 문구</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-link-title">
+      <div class="wrap faq-teaser">
+        <div>
+          <h2 id="faq-link-title">자주 묻는 질문</h2>
+          <p class="faq-note">법인 비대면 신청 절차와 결제성 여신 상품에 관한 질문을 게시판에서 확인하세요.</p>
+        </div>
+        <a class="faq-link" href="faq.html">FAQ 게시판 열기</a>
+      </div>
+    </section>
+
+    <section class="section wrap" id="contact" aria-labelledby="contact-title">
+      <div class="contact-layout">
+        <div>
+          <h2 id="contact-title">문의·협업 안내</h2>
+          <div class="contact-grid">
+            <article class="contact-card">
+              <h3>영업점 문의</h3>
+              <p>업무 또는 상품명, 문의가 생긴 단계, 확인이 필요한 내용을 적어 주세요.</p>
+            </article>
+            <article class="contact-card">
+              <h3>본부 협업 요청</h3>
+              <p>협업 목적, 요청 범위, 희망 일정을 적어 주세요.</p>
+            </article>
+          </div>
+          <p class="channel"><strong>예시 문의 주소</strong> team@example.com</p>
+        </div>
+        <div class="contact-art">
+          <img class="contact-mascot" src="images/byeoldori-cheer.png" width="409" height="592" alt="">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">비대면법인프로세스팀</div>
+  </footer>
+
+  <script>
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const portal = document.querySelector("#hero-portal");
+    const replay = document.querySelector("#portal-replay");
+
+    function openPortal() {
+      if (motion.matches) return;
+      portal.removeAttribute("data-opening");
+      void portal.offsetWidth;
+      portal.setAttribute("data-opening", "");
+    }
+
+    function updateMotion() {
+      replay.hidden = motion.matches;
+      if (motion.matches) portal.removeAttribute("data-opening");
+    }
+
+    portal.addEventListener("animationend", event => {
+      if (event.animationName === "open-portal") portal.removeAttribute("data-opening");
+    });
+    replay.addEventListener("click", openPortal);
+    motion.addEventListener("change", updateMotion);
+    updateMotion();
+
+    const firstLook = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        openPortal();
+        firstLook.disconnect();
+      }
+    }, { threshold: .18 });
+    firstLook.observe(portal);
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="비대면법인프로세스팀의 자주 묻는 질문 게시판입니다.">
+  <title>자주 묻는 질문 | 비대면법인프로세스팀</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="navigation.js" defer></script>
+  <script src="support-chat.js" defer></script>
+</head>
+<body class="faq-page">
+  <a class="skip" href="#faq-main">본문으로 건너뛰기</a>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">비대면법인프로세스팀</a>
+      <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">메뉴</button>
+      <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+        <a href="index.html#intro">팀 소개</a>
+        <a href="index.html#work">주요 업무</a>
+        <a href="faq.html" aria-current="page">자주 묻는 질문</a>
+        <a href="index.html#contact">문의·협업 안내</a>
+      </nav>
+      <label class="role-picker" for="role-view">
+        <span>보기 모드</span>
+        <select id="role-view">
+          <option value="guest">게스트</option>
+          <option value="admin">관리자</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main id="faq-main" aria-labelledby="faq-title">
+    <section class="faq faq-heading">
+      <div class="wrap faq-heading-inner">
+        <div>
+          <a class="back-link" href="index.html">팀 홈페이지</a>
+          <h1 id="faq-title">자주 묻는 질문</h1>
+          <p class="faq-note">답변은 안내 초안입니다. 업무 문서 위치와 문의 채널은 확인 후 업데이트할 예정입니다.</p>
+        </div>
+        <img class="faq-mascot" src="images/byeoldori-laptop.png" width="651" height="651" alt="">
+      </div>
+    </section>
+    <div class="wrap faq-board">
+      <div class="accordion">
+        <details>
+          <summary>법인 비대면 여수신 절차는 어디서 확인하나요?</summary>
+          <p>예금과 대출 중 문의 유형을 먼저 구분해 주세요. 적용 절차를 확인할 업무 안내 문서의 이름과 위치는 확인 후 이곳에 표시할 예정입니다.</p>
+        </details>
+        <details>
+          <summary>비대면 신청이 안 되면 어떻게 하나요?</summary>
+          <p>진행이 멈춘 단계와 화면에 표시된 오류 문구를 확인해 주세요. 추가로 문의할 때는 고객 식별정보를 제외하고 신청 단계와 오류 문구를 전달해 주세요.</p>
+        </details>
+        <details>
+          <summary>결제성 여신 상품은 어디에 문의하나요?</summary>
+          <p>상품명과 문의 내용을 적어 준비해 주세요. 실제 문의 채널은 확인 후 <a href="index.html#contact">문의·협업 안내</a>에 표시할 예정입니다.</p>
+        </details>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">비대면법인프로세스팀</div>
+  </footer>
+</body>
+</html>

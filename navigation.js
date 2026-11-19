@@ -23,3 +23,11 @@ document.addEventListener("keydown", event => {
 });
 
 compact.addEventListener("change", () => setMenu(false));
+
+function showLinkedAnswer() {
+  const question = document.getElementById(location.hash.slice(1));
+  if (question instanceof HTMLDetailsElement) question.open = true;
+}
+
+showLinkedAnswer();
+window.addEventListener("hashchange", showLinkedAnswer);
